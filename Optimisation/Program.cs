@@ -1,3 +1,5 @@
+﻿namespace Optimisation
+{
 using System;
 using System.Linq;
 using System.IO;
@@ -65,10 +67,11 @@ class Solution
             Console.Error.WriteLine($"Temps {ii} est {decimalDistance} / {speedmsi} = {temps}");
             if (speedmsi == speedms)
             {
+                Console.Error.WriteLine($"Speed {ii} n'a pas changé");
                 ii++;
                 continue;
             }
-            Console.Error.WriteLine($"Vérifier la nouvelle vitesse pour les précédents cas");
+            Console.Error.WriteLine($"Speed {ii} a changé. Vérifier la nouvelle vitesse pour les précédents cas");
             speedms = speedmsi;
             var j=ii-1;
             bool convientPourTousPrecedents = true;
@@ -81,13 +84,17 @@ class Solution
                 decimal tempsj = decimalDistanceJ / speedms;
                 Console.Error.WriteLine($"Temps {j} est {decimalDistanceJ} / {speedms} = {tempsj}");
                 decimal kj = (decimal) Math.Floor(tempsj/ (2 *  decimalDurationJ));
-                if (!(kj<=tempsj / (decimalDuration*2) && tempsj / (decimalDuration*2) < kj+(decimal)0.5))
+                Console.Error.WriteLine($"K {j} est {kj}");
+                if (!(kj<=tempsj / (decimalDurationJ*2) && tempsj / (decimalDurationJ*2) < kj+(decimal)0.5))
                 {
                     Console.Error.WriteLine($"Temps {j} ne convient pas");
                     convientPourTousPrecedents = false;
                 }
                 else
+                {
+                    Console.Error.WriteLine($"Temps {j} convient");
                     j--;
+                }
             }
             if (!convientPourTousPrecedents)
                 ii=j;
@@ -101,4 +108,5 @@ class Solution
 
         Console.WriteLine(speed);
     }
+}
 }
