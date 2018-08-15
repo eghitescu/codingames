@@ -17,11 +17,11 @@ class Solution
     {
         int speed = int.Parse(Console.ReadLine());
         Console.Error.WriteLine($"Max speed {speed}");
-        decimal speedms = (decimal) speed * 1000 / 3600;
+        float speedms = (float) speed * 1000 / 3600;
         Console.Error.WriteLine($"Max speed m/s est {speedms}");
         int lightCount = int.Parse(Console.ReadLine());
-        var distanceList = new List<decimal>();
-        var durationList = new List<decimal>();
+        var distanceList = new List<float>();
+        var durationList = new List<float>();
         for (int i = 0; i < lightCount; i++)
         {
             string[] inputs = Console.ReadLine().Split(' ');
@@ -29,32 +29,32 @@ class Solution
             int duration = int.Parse(inputs[1]);
             Console.Error.WriteLine($"distance {i} est {distance}");
             Console.Error.WriteLine($"duration {i} est {duration}");
-            decimal decimalDistance = (decimal) distance;
+            float decimalDistance = (float) distance;
             distanceList.Add(decimalDistance);
-            decimal decimalDuration = (decimal) duration;
+            float decimalDuration = (float) duration;
             durationList.Add(decimalDuration);
         }
         int ii = 0;
         while ( ii < lightCount )
         {
-            decimal decimalDistance = (decimal) distanceList[ii];
-            decimal decimalDuration = (decimal) durationList[ii];
+            float decimalDistance = (float) distanceList[ii];
+            float decimalDuration = (float) durationList[ii];
             Console.Error.WriteLine($"distance {ii} est {decimalDistance}");
             Console.Error.WriteLine($"duration {ii} est {decimalDuration}");            
-            decimal temps = decimalDistance / speedms;
+            float temps = decimalDistance / speedms;
             Console.Error.WriteLine($"Temps{ii} initial est {temps}");
 
             int ki = (int) Math.Floor(temps / (2 * decimalDuration));
             Console.Error.WriteLine($"K{ii} initial est {ki}");
 
-            decimal k= (decimal) ki; 
-            decimal speedmsi = speedms;
+            float k= (float) ki; 
+            float speedmsi = speedms;
             Console.Error.WriteLine($"Speed {ii} initial m/s est {speedmsi}");
-            while(!(k<=temps / (decimalDuration*2) && temps / (decimalDuration*2) < k+(decimal)0.5) && speedms > 0)
+            while(!(k<=temps / (decimalDuration*2) && temps / (decimalDuration*2) < k+(float)0.5) && speedms > 0)
             {
-                k= k + (decimal)1;
+                k= k + (float)1;
                 Console.Error.WriteLine($"K{ii} monte à  {k}");
-                decimal newSpeed = decimalDistance / (decimal) (2 * k * decimalDuration);
+                float newSpeed = decimalDistance / (float) (2 * k * decimalDuration);
                 if (speedmsi > newSpeed)
                 {
                     speedmsi = newSpeed;
@@ -77,15 +77,15 @@ class Solution
             bool convientPourTousPrecedents = true;
             while (j>=0 && convientPourTousPrecedents)
             {
-                decimal decimalDistanceJ = (decimal) distanceList[j];
-                decimal decimalDurationJ = (decimal) durationList[j];
+                float decimalDistanceJ = (float) distanceList[j];
+                float decimalDurationJ = (float) durationList[j];
                 Console.Error.WriteLine($"distance {j} est {decimalDistanceJ}");
                 Console.Error.WriteLine($"duration {j} est {decimalDurationJ}");            
-                decimal tempsj = decimalDistanceJ / speedms;
+                float tempsj = decimalDistanceJ / speedms;
                 Console.Error.WriteLine($"Temps {j} est {decimalDistanceJ} / {speedms} = {tempsj}");
-                decimal kj = (decimal) Math.Floor(tempsj/ (2 *  decimalDurationJ));
+                float kj = (float) Math.Floor(tempsj/ (2 *  decimalDurationJ));
                 Console.Error.WriteLine($"K {j} est {kj}");
-                if (!(kj<=tempsj / (decimalDurationJ*2) && tempsj / (decimalDurationJ*2) < kj+(decimal)0.5))
+                if (!(kj<=tempsj / (decimalDurationJ*2) && tempsj / (decimalDurationJ*2) < kj+(float)0.5))
                 {
                     Console.Error.WriteLine($"Temps {j} ne convient pas");
                     convientPourTousPrecedents = false;
@@ -102,7 +102,7 @@ class Solution
                 ii++;
         }
         Console.Error.WriteLine($"Speed m/s est {speedms}");
-        speed = (int) Math.Floor((decimal)(speedms * 3600 / 1000));
+        speed = (int) Math.Round((float)(speedms * 3600 / 1000));
         // Write an action using Console.WriteLine()
         // To debug: Console.Error.WriteLine("Debug messages...");
 

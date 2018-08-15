@@ -1,0 +1,11 @@
+C:\Users\egh\CodinGamesGit\Optimisation\bin\Debug130\netcoreapp2.1\Optimisation.deps.json
+C:\Users\egh\CodinGamesGit\Optimisation\bin\Debug130\netcoreapp2.1\Optimisation.runtimeconfig.json
+C:\Users\egh\CodinGamesGit\Optimisation\bin\Debug130\netcoreapp2.1\Optimisation.runtimeconfig.dev.json
+C:\Users\egh\CodinGamesGit\Optimisation\bin\Debug130\netcoreapp2.1\Optimisation.dll
+C:\Users\egh\CodinGamesGit\Optimisation\bin\Debug130\netcoreapp2.1\Optimisation.pdb
+C:\Users\egh\CodinGamesGit\Optimisation\obj\Debug130\netcoreapp2.1\Optimisation.csprojAssemblyReference.cache
+C:\Users\egh\CodinGamesGit\Optimisation\obj\Debug130\netcoreapp2.1\Optimisation.csproj.CoreCompileInputs.cache
+C:\Users\egh\CodinGamesGit\Optimisation\obj\Debug130\netcoreapp2.1\Optimisation.AssemblyInfoInputs.cache
+C:\Users\egh\CodinGamesGit\Optimisation\obj\Debug130\netcoreapp2.1\Optimisation.AssemblyInfo.cs
+C:\Users\egh\CodinGamesGit\Optimisation\obj\Debug130\netcoreapp2.1\Optimisation.dll
+C:\Users\egh\CodinGamesGit\Optimisation\obj\Debug130\netcoreapp2.1\Optimisation.pdb
